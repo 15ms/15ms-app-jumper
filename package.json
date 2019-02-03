@@ -1,10 +1,10 @@
 {
   "name": "15ms-router",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A domain name access HTTP API server.",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js --verbose",
+    "dev": "node start.js --verbose",
     "test": "node test"
   },
   "repository": {
