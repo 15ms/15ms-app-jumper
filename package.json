@@ -1,0 +1,28 @@
+{
+  "name": "15ms-router",
+  "version": "0.1.0",
+  "description": "A domain name access HTTP API server.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js --verbose",
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/15ms/15ms-router.git"
+  },
+  "keywords": [
+    "domain",
+    "dynamic"
+  ],
+  "author": "Sartrey Lee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/15ms/15ms-router/issues"
+  },
+  "homepage": "https://github.com/15ms/15ms-router#readme",
+  "dependencies": {
+    "level": "^4.0.0",
+    "lru-cache": "^5.1.1"
+  }
+}
