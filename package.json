@@ -1,11 +1,13 @@
 {
   "name": "15ms-router",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A domain name access HTTP API server.",
   "main": "index.js",
   "scripts": {
-    "dev": "node start.js --verbose",
-    "test": "node test"
+    "dev": "node start.js",
+    "lint": "eslint .",
+    "test": "rm -rf test/fixtures/.15ms && eslint . && nyc --reporter=lcov mocha test/index.js --exit",
+    "lcov": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -13,7 +15,8 @@
   },
   "keywords": [
     "domain",
-    "dynamic"
+    "dynamic",
+    "router"
   ],
   "author": "Sartrey Lee",
   "license": "MIT",
@@ -24,5 +27,14 @@
   "dependencies": {
     "level": "^4.0.0",
     "lru-cache": "^5.1.1"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.2",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^5.2.0",
+    "node-fetch": "^2.3.0",
+    "nyc": "^13.1.0"
   }
 }
