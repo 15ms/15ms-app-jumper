@@ -6,3 +6,6 @@ lcov.info
 .eslintignore
 .eslintrc
 .gitignore
+
+test
+.nyc_output
