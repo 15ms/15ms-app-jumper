@@ -1,6 +1,6 @@
 {
   "name": "15ms-router",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "A domain name access HTTP API server.",
   "main": "index.js",
   "scripts": {
