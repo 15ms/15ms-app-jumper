@@ -1,27 +1,83 @@
 # 15ms-router
 
-A domain name access HTTP API server.
+A short link server.
 
 ## Usage
 
-### APIs
+### install as dependency
+```sh
+npm install --save 15ms-router@latest
+```
 
-#### bind name with host
-http://15ms/?verb=bind&data=name,host,code&hash=
+### use API to start server
+```js
+const jumpServer = require('15ms-router');
 
-#### kill name
-http://15ms/?verb=kill&data=name,code&hash=
+jumpServer({
+  name: 'YOUR-APP-NAME',
+  secure: {
+    public: '', // optional: public key file
+    private: '', // only for debug, private key file
+  },
+  router: {
+    rootdir: 'data-dir', // optional: local data directory
+    cache: {}, // optional: lru-cache options
+  },
+  remote: {
+    connect: 'mysql://', // mysql connect string
+  }
+});
+```
 
-#### find name
-http://15ms/?verb=find&data=name&hash=
+### call server HTTP APIs
 
-#### list name
-http://15ms/?verb=list&hash=
+```js
+var secure = new Secure({
+  private: ''
+});
+/*
+sign(
+  HEX,
+  SHA256,
+  JSON({ verb, data, time = YYYY-MM-DD HH:mm })
+)
+*/
 
-#### hash
-substr(hex(sha256(JSON({ verb, data, time = YYYY-MM-DD HH:mm }))), HH * 2, 18)
+var payload = {
+  verb: 'action',
+  data: {},
+  hash: secure.createHash(verb, data)
+}
 
-### Jump
-http://15ms/name...
+fetch('http://15ms', {
+  method: 'POST',
+  headers: {
+    'content-type': 'application/json'
+  },
+  body: JSON.stringify(payload)
+});
+```
 
-**localhost is invalid**
+#### action: bind
+```js
+{ name, href, code }
+```
+
+#### action: kill
+```js
+{ name, code }
+```
+
+#### action: find
+```js
+{ name }
+```
+
+#### action: list
+```js
+{ }
+```
+
+### access to short link
+
+Open `http://15ms/your-link` and redirect to target.

@@ -1,12 +1,12 @@
 {
   "name": "15ms-router",
-  "version": "0.4.2",
+  "version": "1.0.0",
   "description": "A domain name access HTTP API server.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "dev": "node start.js",
     "lint": "eslint .",
-    "test": "rm -rf test/fixtures/.15ms && eslint . && nyc --reporter=lcov mocha test/index.js --exit",
+    "test": "eslint . && nyc --reporter=lcov mocha test/index.js --exit",
     "lcov": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
@@ -25,16 +25,16 @@
   },
   "homepage": "https://github.com/15ms/15ms-router#readme",
   "dependencies": {
-    "level": "^4.0.0",
+    "level": "^6.0.1",
     "lru-cache": "^5.1.1"
   },
   "devDependencies": {
-    "coveralls": "^3.0.2",
-    "eslint": "^5.13.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "mocha": "^5.2.0",
-    "node-fetch": "^2.3.0",
-    "nyc": "^13.1.0"
+    "coveralls": "^3.0.11",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "mocha": "^7.1.1",
+    "node-fetch": "^2.6.0",
+    "nyc": "^15.0.1"
   }
 }
