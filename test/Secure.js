@@ -10,9 +10,9 @@ const secure = new Secure({
 });
 
 describe('Secure', () => {
-  it('create hash, should be verified', () => {
-    const hash = secure.createHash('test-verb', 'test-data');
+  it('create sign, should be verified', () => {
+    const hash = secure.createSign('test-verb', 'test-data');
     console.log(hash);
-    assert.ok(secure.verifyHash('test-verb', 'test-data', hash));
+    assert.ok(secure.verifySign('test-verb', 'test-data', hash));
   });
 });

@@ -1,6 +1,6 @@
 {
   "name": "15ms-router",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A domain name access HTTP API server.",
   "main": "lib/index.js",
   "scripts": {
@@ -29,7 +29,7 @@
     "lru-cache": "^5.1.1"
   },
   "devDependencies": {
-    "coveralls": "^3.0.11",
+    "coveralls": "^3.0.13",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",

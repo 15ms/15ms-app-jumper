@@ -6,8 +6,8 @@
 3. support 302 redirect (ok)
 
 ## Milestone 1
-1. api secret rsa validator
-2. use hash instead of code when bind
+1. api secret rsa validator (ok)
+2. use hash instead of code when bind (ok)
 3. log to stdout
 
 ## Milestone 2
