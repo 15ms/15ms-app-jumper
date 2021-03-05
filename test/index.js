@@ -1,2 +1,0 @@
-require('./Secure');
-require('./Server');
